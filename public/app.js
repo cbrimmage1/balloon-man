@@ -46,37 +46,28 @@ ws.onmessage = (event) => {
 };
 
 // send like button values to server
-likeButton.addEventListener('click', (data) => {
+likeButton.addEventListener('click', () => {
     console.log('like button was clicked');
 
-    let value = data.target.value;
-    console.log(value);
 
     if (ws.readyState === WebSocket.OPEN) {
-        if (value === 'false') {
-            value = true;
-        } else {
-            value = false;
-        }
 
-        console.log(value);
-        
-        ws.send({
+        ws.send(JSON.stringify({
             type: 'like',
-            value: value
-        });
+        }));
     }
 
 });
 
 // send dislike button values to server
-// dislikeButton.addEventListener('click', () => {
-//     console.log('dislike button was clicked');
+dislikeButton.addEventListener('click', () => {
+    console.log('dislike button was clicked');
 
-//     if (ws.readyState === WebSocket.OPEN) {
-//         ws.send(JSON.stringify({
-//             type: 'dislike',
-//         }));
-//     }
+    if (ws.readyState === WebSocket.OPEN) {
 
-// });
+        ws.send(JSON.stringify({
+            type: 'like',
+        }));
+    }
+
+});

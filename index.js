@@ -60,7 +60,7 @@ wss.on('connection', (ws, req) => {
     // });
 
     // listen for data from the client pressing buttons to send to arduino
-    ws.on('incomingData', (incomingData) => {
+    ws.on('message', (incomingData) => {
         try {
             // incomingData string as json
             const data = JSON.parse(incomingData);
@@ -71,7 +71,7 @@ wss.on('connection', (ws, req) => {
             if (data.type === 'like') {
                 // toggle the inflate motor state
                 serverState.inflateOn = !serverState.inflateOn;
-                console.log('Button toggled to:', serverState.inflateOn);
+                console.log('Like Button toggled to:', serverState.inflateOn);
                 broadcast({ type: 'inflateState', value: serverState.inflateOn });
             }
 
@@ -79,7 +79,7 @@ wss.on('connection', (ws, req) => {
             if (data.type === 'dislike') {
                 // toggle the deflate motor state
                 serverState.deflateOn = !serverState.deflateOn;
-                console.log('Button toggled to:', serverState.deflateOn);
+                console.log('Dislike Button toggled to:', serverState.deflateOn);
                 broadcast({ type: 'deflateState', value: serverState.deflateOn });
             }
 
