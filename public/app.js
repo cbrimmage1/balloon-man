@@ -90,7 +90,7 @@ dislikeButton.addEventListener('click', () => {
     if (ws.readyState === WebSocket.OPEN) {
 
         ws.send(JSON.stringify({
-            type: 'like',
+            type: 'dislike',
         }));
     }
 
