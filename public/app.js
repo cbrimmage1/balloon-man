@@ -4,7 +4,10 @@ let chatBox = document.getElementById('chat-box-msgs');
 let sendButton = document.getElementById('send-button');
 let nameInput = document.getElementById('name-input')
 let msgInput = document.getElementById('msg-input');
-let subscribe = document.getElementById('subscribe__button');
+let subscribeButton = document.getElementById('subscribe__button');
+
+let likeCount = 0;
+let dislikeCount = 0;
 
 // Connect to WebSocket server
 const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
@@ -68,12 +71,15 @@ ws.onmessage = (event) => {
 };
 
 
-
-// send like button values to server
+// like button event listener
 likeButton.addEventListener('click', () => {
     console.log('like button was clicked');
 
+    likeCount++;
+    let likes = document.getElementById('likes');
+    likes.innerText = likeCount + " Likes";
 
+    // send like button values to server
     if (ws.readyState === WebSocket.OPEN) {
 
         ws.send(JSON.stringify({
@@ -83,10 +89,16 @@ likeButton.addEventListener('click', () => {
 
 });
 
-// send dislike button values to server
+// dislike button event listener
 dislikeButton.addEventListener('click', () => {
     console.log('dislike button was clicked');
 
+    dislikeCount++;
+    let dislikes = document.getElementById('dislikes');
+    dislikes.innerText = dislikeCount + " Dislikes";
+  
+
+    // send dislike button values to server
     if (ws.readyState === WebSocket.OPEN) {
 
         ws.send(JSON.stringify({
@@ -116,15 +128,11 @@ sendButton.addEventListener('click', function () {
 
 // change "subscribe" button
 
+subscribeButton.addEventListener('click', function () {
 
-
-// select "subscribe" button
-
-subscribe.addEventListener('click', function () {
-
-    subscribe = document.getElementById('subscribe__button').innerText = "Subscribed";
-    subscribe__button.style.backgroundColor = 'red';
-    subscribe__button.style.color = 'white';
+    subscribeButton = document.getElementById('subscribe__button').innerText = "Subscribed";
+    subscribeButton.style.backgroundColor = 'red';
+    subscribeButton.style.color = 'white';
 })
 
 
