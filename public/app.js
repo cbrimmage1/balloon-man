@@ -4,6 +4,7 @@ let chatBox = document.getElementById('chat-box-msgs');
 let sendButton = document.getElementById('send-button');
 let nameInput = document.getElementById('name-input')
 let msgInput = document.getElementById('msg-input');
+let subscribe = document.getElementById('subscribe__button');
 
 // Connect to WebSocket server
 const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
@@ -49,7 +50,7 @@ ws.onmessage = (event) => {
             console.log(data);
 
             //Create a message string and page element
-            let receivedMsg = data.name + ": " + data.msg;
+            let receivedMsg = data.value.msgObj.name + ": " + data.value.msgObj.msg;
             let msgEl = document.createElement('p');
             msgEl.innerHTML = receivedMsg;
 
@@ -112,3 +113,18 @@ sendButton.addEventListener('click', function () {
     }
 
 });
+
+// change "subscribe" button
+
+
+
+// select "subscribe" button
+
+subscribe.addEventListener('click', function () {
+
+    subscribe = document.getElementById('subscribe__button').innerText = "Subscribed";
+    subscribe__button.style.backgroundColor = 'red';
+    subscribe__button.style.color = 'white';
+})
+
+

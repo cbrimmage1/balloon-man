@@ -1,7 +1,11 @@
+* {
+    margin: 0;
+}
+
 body {
     background-color: #020302;
     font-family: "Inter", sans-serif;
-    margin-top: 0;
+    margin: 12px 0;
 }
 
 h3 {
@@ -36,6 +40,11 @@ h4 {
     margin-bottom: 12px 0;
 }
 
+.video-gif {
+    width: 100vw;
+    height: 217px;
+}
+
 .profile-picture {
     float: left;
     display: block;
@@ -66,6 +75,7 @@ h4 {
 
 .user-name-container {
     width: 100%;
+    margin-top: 6px;
     margin-bottom: 12px;
 }
 
@@ -81,7 +91,7 @@ h4 {
 
 }
 
-.subscribe-button {
+#subscribe__button {
     float: right;
     background-color: #f1f1f1;
     border-radius: 21px;
@@ -177,6 +187,7 @@ button {
     overflow: auto;
     background-color: #1A1A1A;
     padding-right: 12px;
+    padding-top: 12px;
 }
 
 
@@ -185,6 +196,8 @@ p {
     overflow-wrap: break-word;
     font-size: .8rem;
     margin-left: 12px;
+    padding: 2px;
+    color: whitesmoke;
 }
 
 @media (max-width: 800px) {
@@ -192,34 +205,3 @@ p {
         width: 100%;
     }
 }
-
-
-
-/* new styles for the interactive buttons */
-/* .like-button {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 12px;
-}
-
-.dislike-button {
-    background-color: #f44336;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 32px;
-} */
