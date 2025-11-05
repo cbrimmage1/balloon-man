@@ -1,10 +1,11 @@
 let dislikeButton = document.getElementById('dislike-button');
 let likeButton = document.getElementById('like-button');
+let subscribeButton = document.getElementById('subscribe__button');
+
 let chatBox = document.getElementById('chat-box-msgs');
 let sendButton = document.getElementById('send-button');
 let nameInput = document.getElementById('name-input')
 let msgInput = document.getElementById('msg-input');
-let subscribeButton = document.getElementById('subscribe__button');
 
 let likeCount = 0;
 let dislikeCount = 0;
@@ -131,8 +132,8 @@ sendButton.addEventListener('click', function () {
 subscribeButton.addEventListener('click', function () {
 
     subscribeButton = document.getElementById('subscribe__button').innerText = "Subscribed";
-    subscribeButton.style.backgroundColor = 'red';
-    subscribeButton.style.color = 'white';
+    subscribe__button.style.backgroundColor = 'red';
+    subscribe__button.style.color = 'white';
 })
 
 
