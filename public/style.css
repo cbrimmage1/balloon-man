@@ -1,3 +1,225 @@
-* {
-    margin: 0;
+body {
+    background-color: #020302;
+    font-family: "Inter", sans-serif;
+    margin-top: 0;
 }
+
+h3 {
+    float: left;
+    margin-bottom: 12px;
+    margin-top: 0px;
+    vertical-align: center;
+}
+
+/* detail size font not working */
+h4 {
+    font-family: "Inter", sans-serif;
+    color: #919191;
+    font-size: 0.7rem;
+    font-weight: 400;
+    text-align: left;
+    display: block;
+    margin-left: 12px;
+
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.video {
+    width: 100vw;
+    height: 217px;
+    background-color: #7e7d7d;
+    margin-bottom: 12px 0;
+}
+
+.profile-picture {
+    float: left;
+    display: block;
+    border-radius: 100px;
+    width: 32px;
+    height: 32px;
+    margin-right: 12px;
+    margin-left: 12px;
+}
+
+
+.video-name {
+    font-size: 20px;
+    width: 100%;
+    text-align: left;
+    font-weight: bold;
+    color: #f1f1f1;
+    margin-top: 12px;
+    margin-left: 12px;
+}
+
+.viewer-count {
+    width: 100%;
+    margin-bottom: 0px;
+    margin-top: 0px;
+
+}
+
+.user-name-container {
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.user-name-text {
+    float: none;
+    /* override global h3 float */
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    font-weight: bold;
+    color: #f1f1f1;
+    margin-left: 0;
+
+}
+
+.subscribe-button {
+    float: right;
+    background-color: #f1f1f1;
+    border-radius: 21px;
+    color: black;
+    width: 85px;
+    height: 37px;
+    vertical-align: center;
+}
+
+.buttons-container {
+    width: 100%;
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    margin-bottom: 0px;
+    vertical-align: center;
+
+
+}
+
+.sub-container {
+    display: flex;
+    width: 100%;
+    max-width: 393px;
+    margin-left: 12px;
+    margin-right: 12px;
+    justify-content: left;
+    /* placeholder for font color */
+    color: #f1f1f1;
+
+}
+
+.chat-input {
+    flex-direction: row;
+    align-items: left;
+}
+
+.chat-feed {
+    flex-direction: column;
+    align-items: left;
+
+}
+
+/* for name entry */
+input {
+    display: inline;
+    padding: 5px;
+    margin: 10px 10px 0 0;
+    height: 20px;
+    border-radius: 21px;
+    background-color: #1A1A1A;
+    color: #ababab;
+    font-size: 8;
+    /* THESE ARE FOR NATIVE BORDERS AND STUFF */
+    border: none;
+    outline: none;
+
+
+}
+
+.chat-input-name {
+    width: 25%;
+}
+
+.chat-input-msg {
+    width: 60%;
+    color: #ababab;
+}
+
+button {
+    height: 32px;
+    width: 64px;
+    margin-right: 12px;
+    margin-top: 10px;
+    background-color: #313131;
+    color: #ffffff;
+    /* THIS REMOVES STYLING FROM NATIVE BUTTONS */
+    border: none;
+    border-radius: 10px;
+
+
+
+
+}
+
+.chat-box {
+    border-radius: 14px;
+    width: calc(100vw - 24px);
+    box-sizing: border-box;
+    margin-right: 12px;
+    height: 329px;
+    overflow: auto;
+    background-color: #1A1A1A;
+    padding-right: 12px;
+}
+
+
+/* chat text styling */
+p {
+    overflow-wrap: break-word;
+    font-size: .8rem;
+    margin-left: 12px;
+}
+
+@media (max-width: 800px) {
+    .sub-container {
+        width: 100%;
+    }
+}
+
+
+
+/* new styles for the interactive buttons */
+/* .like-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.dislike-button {
+    background-color: #f44336;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 32px;
+} */

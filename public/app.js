@@ -1,5 +1,9 @@
 let dislikeButton = document.getElementById('dislike-button');
 let likeButton = document.getElementById('like-button');
+let chatBox = document.getElementById('chat-box-msgs');
+let sendButton = document.getElementById('send-button');
+let nameInput = document.getElementById('name-input')
+let msgInput = document.getElementById('msg-input');
 
 // Connect to WebSocket server
 const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
@@ -39,11 +43,30 @@ ws.onmessage = (event) => {
             dislikeButton.value = !dislikeButton.value;
         }
 
+        // handle chat messages from clients
+        if (data.type === 'msg' && data.value !== undefined) {
+            console.log("Message arrived!");
+            console.log(data);
+
+            //Create a message string and page element
+            let receivedMsg = data.name + ": " + data.msg;
+            let msgEl = document.createElement('p');
+            msgEl.innerHTML = receivedMsg;
+
+            //Add the element with the message to the page
+            chatBox.appendChild(msgEl);
+
+            //Add a bit of auto scroll for the chat box
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
 
     } catch (error) {
         console.error('Error parsing message:', error);
     }
 };
+
+
 
 // send like button values to server
 likeButton.addEventListener('click', () => {
@@ -67,6 +90,24 @@ dislikeButton.addEventListener('click', () => {
 
         ws.send(JSON.stringify({
             type: 'like',
+        }));
+    }
+
+});
+
+// send message 
+
+sendButton.addEventListener('click', function () {
+    let curName = nameInput.value;
+    let curMsg = msgInput.value;
+    let msgObj = { "name": curName, "msg": curMsg };
+
+    if (ws.readyState === WebSocket.OPEN) {
+
+        //send the message object to the server
+        ws.send(JSON.stringify({
+            type: 'msg',
+            msgObj
         }));
     }
 

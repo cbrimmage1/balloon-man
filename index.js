@@ -50,15 +50,6 @@ wss.on('connection', (ws, req) => {
         state: serverState
     }));
 
-    //listen for chat messages from the client
-    // ws.on('msg', function(data) {
-    //     //Data can be numbers, strings, objects
-    //     console.log("Received a 'msg':", data);
-
-    //     //send a response to all clients, including this one
-    //     broadcast({ type: 'chatMessage', value: data }) //
-    // });
-
     // listen for data from the client pressing buttons to send to arduino
     ws.on('message', (incomingData) => {
         try {
@@ -81,6 +72,15 @@ wss.on('connection', (ws, req) => {
                 serverState.deflateOn = !serverState.deflateOn;
                 console.log('Dislike Button toggled to:', serverState.deflateOn);
                 broadcast({ type: 'deflateState', value: serverState.deflateOn });
+            }
+
+            // chat messages
+            if (data.type === 'msg') {
+                //Data can be numbers, strings, objects
+                console.log("Received a 'msg':", data);
+
+                //send a response to all clients, including this one
+                broadcast({ type: 'msg', value: data }) 
             }
 
         } catch (error) {

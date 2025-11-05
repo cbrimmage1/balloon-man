@@ -1,16 +1,76 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css">
     <title>Balloon Man</title>
-    <link href="style.css" rel="stylesheet"/>
 </head>
-<body>
-    <h1>Balloon Man</h1>
-    <button id="dislike-button">Dislike</button>
-    <button id="like-button">Like</button>
 
-    <script src="app.js"></script>
+<body>
+    <!--whole section-->
+    <div class="container">
+
+        <!-- View chat messages here here -->
+
+        <div class="video">
+            <!--place video embed here-->
+            <iframe width="100%" height="217px" src="https://www.youtube.com/embed/S6uY4eiZMS0?si=3oj6whTt6JEPo3qJ"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <!-- videotitle -->
+        <div class="video-name">
+            LIVE NAME OF VIDEO
+        </div>
+
+        <!-- videostats -->
+        <div class="viewer-count">
+            <h4>356 viewers started 11h ago</h4>
+        </div>
+
+        <!-- profile section -->
+        <div class="user-name-container">
+            <img class="profile-picture" src="balloon_man.jpg" alt="balloon pfp">
+            <h3 class="user-name-text">Balloon man</h3>
+            <button class="subscribe-button">Subscribe</button>
+        </div>
+
+        <!-- like and dislike -->
+        <div class="buttons-container">
+            <button id="like-button">Like</button>
+            <button id="dislike-button">Dislike</button>
+        </div>
+
+
+        <!-- chat feed -->
+        <div class="sub-container chat-feed">
+            <div>
+                <h3>Live Chat</h3>
+            </div>
+
+            <div class="chat-box" id="chat-box-msgs"></div>
+
+        </div>
+        <!-- Enter chat messages here -->
+
+
+        <div class="sub-container chat-input">
+            <input type="text" class="chat-input-name" id="name-input" placeholder="Name..."> <input type="text"
+                class="chat-input-msg" id="msg-input" placeholder="Message..."> <button id="send-button">Send</button>
+            <!-- added interactive buttons for eventual js -->
+        </div>
+    </div>
+    <script src="app.js" type="text/javascript"></script>
 </body>
+
 </html>
