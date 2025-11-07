@@ -16,61 +16,63 @@
 </head>
 
 <body>
-    <!--whole section-->
-    <div class="container">
+    <!--container for entire page-->
+    <section id="page__container">
 
-        <!-- View chat messages here here -->
+        <!--container for app contents-->
+        <div class="app__container">
 
-        <div class="video">
-            <!--place video embed here-->
+
+            <!--demo "video"-->
             <img class="video-gif" src="balloon.GIF" alt="balloon video">
-            <!-- <iframe width="100%" height="217px" src="https://www.youtube.com/embed/S6uY4eiZMS0?si=3oj6whTt6JEPo3qJ"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
-        </div>
 
-        <!-- videotitle -->
-        <div class="video-name">
-            BALLOON MAN LIVE (REAL)
-        </div>
 
-        <!-- videostats -->
-        <div class="viewer-count">
-            <h4>356 viewers started 11h ago</h4>
-        </div>
+            <!-- video title -->
+            <div class="video-title">
+                BALLOON MAN LIVE (REAL)
+            </div>
 
-        <!-- profile section -->
-        <div class="user-name-container">
-            <img class="profile-picture" src="balloon_man.jpg" alt="balloon pfp">
-            <h3 class="user-name-text">Balloon man</h3>
-            <button id="subscribe__button">Subscribe</button>
-        </div>
+            <!-- viewer count -->
+            <h4 id="viewer-count">356 viewers started 11h ago</h4>
+         
 
-        <!-- like and dislike -->
-        <div class="buttons-container">
-            <button id="like-button"><i class="fa-solid fa-thumbs-up"></i>  <span id="likes">Like</span></button>
-            <button id="dislike-button"><i class="fa-solid fa-thumbs-down"></i>   <span id="dislikes">Dislike</span></button>
-        </div>
+            <!-- profile section -->
+            <div class="user-name-container">
+                <!-- profile photo -->
+                <img class="profile-picture" src="balloon_man.jpg" alt="balloon pfp">
+                <!-- profile username -->
+                <h3 class="user-name-text">Balloon man</h3>
+                <!-- subscribe button -->
+                <button id="subscribe__button">Subscribe</button>
+            </div>
 
-        <h3 id="live-chat">Live Chat</h3>
+            <!-- like and dislike buttons -->
+            <div class="buttons-container">
+                <!-- like -->
+                <button id="like-button"><i class="fa-solid fa-thumbs-up"></i> <span id="likes">Like</span></button>
+                <!-- dislike -->
+                <button id="dislike-button"><i class="fa-solid fa-thumbs-down"></i> <span
+                        id="dislikes">Dislike</span></button>
+            </div>
 
-        <!-- chat feed -->
-        <div class="sub-container chat-feed">
+            <!-- live chat header -->
+            <h3 id="live-chat-header">Live Chat</h3>
 
+            <!-- chat feed box -->
             <div class="chat-box" id="chat-box-msgs"></div>
 
-        </div>
-        <!-- Enter chat messages here -->
+            <!-- chat inputs -->
+            <div class="chat-input">
+                <!-- chat name input -->
+                <input type="text" class="chat-input-name" id="name-input" placeholder="Name...">
+                <!-- chat message input -->
+                <input type="text" class="chat-input-msg" id="msg-input" placeholder="Message...">
+                <!-- send chat input -->
+                <button id="send-button">Send</button>
+            </div>
 
-
-        <div class="chat-input">
-            <input type="text" class="chat-input-name" id="name-input" placeholder="Name...">
-            <input type="text" class="chat-input-msg" id="msg-input" placeholder="Message...">
-            <button id="send-button">Send</button>
-        </div>
-    </div>
-    <script src="app.js" type="text/javascript"></script>
+        <script src="app.js" type="text/javascript"></script>
+    </section>
 </body>
 
 </html>

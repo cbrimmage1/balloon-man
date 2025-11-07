@@ -1,89 +1,80 @@
-* {
-    margin: 0;
-}
-
 body {
-    background-color: #020302;
+    background-color: rgb(60, 60, 60);
     font-family: "Inter", sans-serif;
     margin: 12px 0;
 }
 
-h3 {
-    float: left;
-    margin-bottom: 12px;
-    margin-top: 0px;
-    vertical-align: center;
-}
+/* page container styling */
+#page__container {
 
-/* detail size font not working */
-h4 {
-    font-family: "Inter", sans-serif;
-    color: #919191;
-    font-size: 0.7rem;
-    font-weight: 400;
-    text-align: left;
-    display: block;
-    margin-left: 12px;
-
-}
-
-.container {
     display: flex;
     flex-direction: column;
-    align-items: left;
-}
-
-.video {
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    height: 217px;
-    margin-bottom: 12px 0;
+    height: 100%;
 }
 
+/* app container styling */
+.app__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75%;
+    height: 50%;
+    background-color: #020302;
+    padding: 2rem;
+    border-radius: 5%;
+}
+
+/* demo video (gif) */
 .video-gif {
     width: 100%;
-    height: 217px;
 }
 
-.profile-picture {
-    float: left;
-    display: block;
-    border-radius: 100px;
-    width: 32px;
-    height: 32px;
-    margin-right: 12px;
-    margin-left: 12px;
-}
-
-
-.video-name {
+.video-title {
     font-size: 20px;
     width: 100%;
     text-align: left;
     font-weight: bold;
     color: #f1f1f1;
     margin-top: 12px;
-    margin-left: 12px;
 }
 
-.viewer-count {
+
+#viewer-count {
     width: 100%;
-    margin-bottom: 0px;
-    margin-top: 0px;
+    color: #919191;
+    font-size: 0.8rem;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    text-align: left;
+    display: block;
+    margin: 6px 0;
 
 }
 
+/* container for pfp, username, & subscribe button */
 .user-name-container {
     width: 100%;
-    margin-top: 6px;
-    margin-bottom: 12px;
+    margin: 6px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-picture {
+    float: left;
+    display: block;
+    border-radius: 100px;
+    width: 3rem;
+    height: 3rem;
 }
 
 .user-name-text {
-    float: none;
-    /* override global h3 float */
-    display: inline-block;
-    vertical-align: middle;
     text-align: left;
+    padding: 0 1rem;
+    font-size: 1rem;
     font-weight: bold;
     color: #f1f1f1;
     margin: 0;
@@ -91,125 +82,97 @@ h4 {
 }
 
 #subscribe__button {
-    float: right;
     background-color: #f1f1f1;
     border-radius: 21px;
     color: black;
-    width: 85px;
-    height: 37px;
-    vertical-align: center;
-    margin-left: 12px;
-    margin-top: 0;
+    width: 7rem;
+    height: 2.5rem;
+    margin-left: auto;
 }
 
+/* container for buttons */
 .buttons-container {
     width: 100%;
-    margin-bottom: 12px;
+    /* margin-bottom: 6px; */
     display: flex;
     flex-direction: row;
     justify-content: right;
-    margin-bottom: 0px;
     vertical-align: center;
 
 
 }
 
-.sub-container {
-    display: flex;
+#live-chat-header {
+    color: #f1f1f1;
     width: 100%;
-    max-width: 393px;
-    /* margin-left: 12px;
-    margin-right: 12px; */
-    align-items: center;
-    /* placeholder for font color */
-    color: #f1f1f1;
-
-}
-
-#live-chat {
-    color: #f1f1f1;
-    margin-left: 12px;
-}
-
-.chat-input {
-    margin: 0 12px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.chat-feed {
-    flex-direction: column;
-    align-items: left;
-
-}
-
-/* for name entry */
-input {
-    display: inline;
-    padding: 5px;
-    margin: 10px 10px 0 0;
-    height: 20px;
-    border-radius: 21px;
-    background-color: #1A1A1A;
-    color: #ababab;
-    font-size: 8;
-    /* THESE ARE FOR NATIVE BORDERS AND STUFF */
-    border: none;
-    outline: none;
-
-
-}
-
-.chat-input-name {
-    width: 25%;
-}
-
-.chat-input-msg {
-    width: 60%;
-    color: #ababab;
-}
-
-button {
-    height: 32px;
-    width: 94px;
-    margin-right: 12px;
-    margin-top: 10px;
-    background-color: #313131;
-    color: #ffffff;
-    /* THIS REMOVES STYLING FROM NATIVE BUTTONS */
-    border: none;
-    border-radius: 10px;
-
-
-
-
+    margin: 12px 0;
 }
 
 .chat-box {
     border-radius: 14px;
-    width: calc(100vw - 24px);
-    box-sizing: border-box;
-    /* margin-right: 12px; */
-    height: 329px;
+    width: 100%;
+    height: 12rem;
     overflow: auto;
     background-color: #1A1A1A;
     padding-right: 12px;
     padding-top: 12px;
 }
 
+.chat-input {
+    width: 100%;
+    margin: 0 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+/* for name & chat input */
+input {
+    display: inline;
+    padding: 0.5rem;
+    margin: 10px 10px 0 0;
+    height: 20px;
+    border-radius: 21px;
+    background-color: #1A1A1A;
+    color: #ababab;
+    font-size: 14px;
+    border: none;
+    outline: none;
+}
+
+/* chat name entry */
+.chat-input-name {
+    width: 25%;
+}
+
+/* message entry */
+.chat-input-msg {
+    width: 60%;
+    color: #ababab;
+}
 
 /* chat text styling */
 p {
     overflow-wrap: break-word;
-    font-size: .8rem;
+    font-size: 14px;
     margin-left: 12px;
     padding: 2px;
+    margin-top: 0;
+    margin-bottom: 0;
     color: whitesmoke;
 }
 
-@media (max-width: 800px) {
-    .sub-container {
-        width: 100%;
-    }
+/* send chat button */
+button {
+    height: 2.5rem;
+    width: 7rem;
+    margin-right: 12px;
+    margin-top: 10px;
+    background-color: #313131;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+
 }
+

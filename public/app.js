@@ -112,9 +112,9 @@ dislikeButton.addEventListener('click', () => {
 // send message 
 
 sendButton.addEventListener('click', function () {
-    let curName = nameInput.value;
-    let curMsg = msgInput.value;
-    let msgObj = { "name": curName, "msg": curMsg };
+    let userName = nameInput.value;
+    let userMsg = msgInput.value;
+    let msgObj = { "name": userName, "msg": userMsg };
 
     if (ws.readyState === WebSocket.OPEN) {
 
@@ -124,6 +124,9 @@ sendButton.addEventListener('click', function () {
             msgObj
         }));
     }
+
+    // clear input message
+    msgInput.value = "";
 
 });
 
