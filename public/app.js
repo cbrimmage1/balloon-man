@@ -85,6 +85,7 @@ likeButton.addEventListener('click', () => {
 
         ws.send(JSON.stringify({
             type: 'like',
+            likeCount
         }));
     }
 
@@ -104,6 +105,7 @@ dislikeButton.addEventListener('click', () => {
 
         ws.send(JSON.stringify({
             type: 'dislike',
+            dislikeCount
         }));
     }
 

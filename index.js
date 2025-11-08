@@ -8,6 +8,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// setup express app & server
 const app = express();
 const server = createServer(app);
 const wss = new WebSocketServer({ server });
@@ -18,6 +19,7 @@ app.use(express.static('public'));
 // a js storage object, similiar to array, but prevents duplicate data
 const clients = new Set();
 
+// motor toggle states to send to arduino
 const serverState = {
     // pump motor off
     inflateOn: false,
@@ -38,6 +40,7 @@ function broadcast(data) {
     });
 }
 
+// client disconnected
 // ws = connected client
 wss.on('connection', (ws, req) => {
     console.log('New client connected');
